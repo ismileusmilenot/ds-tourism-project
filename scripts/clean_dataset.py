@@ -1,6 +1,8 @@
 import numpy as np
 
 def clean_dataset(df):
+    df = df.copy(deep=True)
+    
     df.drop('ID', axis=1, inplace=True)
 
     df.replace({" Wildlife": "Wildlife"}, inplace=True)
