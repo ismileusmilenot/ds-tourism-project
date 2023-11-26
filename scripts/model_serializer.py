@@ -12,15 +12,22 @@ class ModelSerializer:
         self.filename = filename
         
     def dump(self, model):
-        return pickle.dump(model, open(self.filename, 'wb'))
+        return pickle.dump(model, self.file('wb'))
     
     def load(self):
-        return pickle.load(open(self.filename, 'rb'))
-
+        return pickle.load(self.file())
+    
+    def file(self, mode='rb'):
+        return open(self.filename, mode)
 
     
+# savegame = ModelSerializer('models/the_best.model')
+# savegame.dump(model)
+# savegame.load()
 
-#def save_model(filename='final_model.sav'):
+
+
+#def save_model(filename='final_model.sav', model):
 #    return pickle.dump(model, open(filename, 'wb'))
 
 #def load_model(filename='final_model.sav'):
