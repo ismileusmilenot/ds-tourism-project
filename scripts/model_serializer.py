@@ -11,7 +11,7 @@ class ModelSerializer:
     def __init__(self, filename='models/model.sav'):
         self.filename = filename
         
-    def dump(self, model):
+    def save(self, model):
         return pickle.dump(model, self.file('wb'))
     
     def load(self):
