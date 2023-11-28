@@ -4,7 +4,7 @@ class ModelSerializer:
     """
     Save and Load Models into a file specified in the constructor.
     
-    ModelSerializer('models/best_model.sav').dump(model)
+    ModelSerializer('models/best_model.sav').save(model)
     ModelSerializer('models/best_model.sav').load()
     """
 
@@ -19,11 +19,6 @@ class ModelSerializer:
     
     def file(self, mode='rb'):
         return open(self.filename, mode)
-
-    
-# savegame = ModelSerializer('models/the_best.model')
-# savegame.dump(model)
-# savegame.load()
 
 
 
